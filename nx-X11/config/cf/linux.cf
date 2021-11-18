@@ -764,6 +764,12 @@ XCOMM binutils:	(LinuxBinUtilsMajorVersion)
 # endif
 #endif
 
+#ifdef LA64Architecture
+# define LinuxMachineDefines  -D__loongarch__
+# define ServerOSDefines	XFree86ServerOSDefines -DDDXTIME
+# define ServerExtraDefines	-DGCCUSESGAS XFree86ServerDefines -D_XSERVER64
+#endif
+
 #if defined (Ppc64Architecture) || defined (Ppc64LeArchitecture)
 # define DefaultCCOptions	-std=c99 GccWarningOptions -mminimal-toc
 # ifndef OptimizedCDebugFlags

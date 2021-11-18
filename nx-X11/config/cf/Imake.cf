@@ -149,6 +149,9 @@
 #   undef __x86_64__
 #   undef amd64
 # endif
+# if defined(__loongarch64)
+#  define LA64Architecture
+# endif
 # if defined(__mc68020__) || defined(mc68020)
 #  define Mc68020Architecture
 #  if defined(amiga)
@@ -305,6 +308,9 @@
 #  define AMD64Architecture
 #  undef __amd64__
 #  undef __x86_64__
+# endif
+# ifdef __loongarch64
+# define LA64Architecture
 # endif
 # ifdef __powerpc__
 #  define PpcArchitecture
@@ -842,6 +848,9 @@ XCOMM Keep cpp from replacing path elements containing i486/i586/i686
 # endif
 # ifdef __aarch64__
 #  define Arm64Architecture
+# endif
+# ifdef __loongarch64
+#  define LA64Architecture
 # endif
 # ifdef mc68000
 #  define Mc68020Architecture
